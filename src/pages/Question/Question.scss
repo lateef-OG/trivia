@@ -1,0 +1,120 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/_variables.scss";
+
+.question-page {
+  min-height: 100vh;
+  background: $white;
+  padding: 180px 30px;
+  position: relative;
+  @include screen(mobile) {
+    padding: 125px 20px 41px;
+  }
+  .question-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 655px;
+    margin: 0 auto;
+    .category-text {
+      font-weight: 500;
+      font-size: 81px;
+      line-height: 101px;
+      color: $deep-purple;
+      text-align: center;
+      margin-bottom: 30px;
+      @include screen(mobile) {
+        font-size: 31px;
+        line-height: 39px;
+        margin-bottom: 15px;
+      }
+    }
+    .difficulty {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 116.13%;
+      color: $deep-purple;
+      text-align: center;
+      letter-spacing: 0.5em;
+      text-transform: lowercase;
+      @include screen(mobile) {
+        font-size: 13px;
+      }
+    }
+    .question-text {
+      font-weight: 500;
+      font-size: 31px;
+      line-height: 143.9%;
+      text-align: center;
+      color: $deep-purple;
+      margin: 61px 0 74px;
+      @include screen(mobile) {
+        font-size: 25px;
+        margin: 50px 0;
+        text-align: left;
+        padding-right: 85px;
+      }
+    }
+
+    button{
+        margin-top: 30px;
+        text-transform: uppercase;
+        @include screen(mobile){
+            margin-top: 5px;
+        }
+    }
+  }
+  .illustration {
+    position: absolute;
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      &.one {
+        left: 0;
+        top: 0;
+      }
+      &.two {
+        right: 0;
+        top: 0;
+      }
+      &.three {
+        left: 0;
+        bottom: 0;
+      }
+      &.four {
+        right: 0;
+        bottom: 0;
+      }
+    }
+    @include screen(mobile) {
+      &.mobile {
+        display: initial;
+        &.one {
+          left: 0;
+          top: 0;
+        }
+        &.two {
+          right: 0;
+          top: 0;
+        }
+        &.three {
+          left: 0;
+          bottom: 0;
+          width: 120px;
+          height: auto;
+        }
+        &.four {
+          right: 0;
+          bottom: 238px;
+        }
+        &.five {
+            right: 0;
+            bottom: 0;
+        }
+      }
+      &.desktop {
+        display: none;
+      }
+    }
+  }
+}
