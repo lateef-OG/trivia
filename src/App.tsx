@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.scss';
-import Question from './pages/Question/Question';
+import Result from './pages/Result/Result';
 
 
 function App() {
   return (
     <div className="App">
-      <Question />
+      <Result />
     </div>
   );
 }

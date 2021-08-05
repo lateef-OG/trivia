@@ -1,0 +1,40 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/_variables.scss";
+
+.progress {
+  @include screen(mobile) {
+    width: 100%;
+  }
+  .text {
+    font-weight: bold;
+    font-size: 20px;
+    color: $deep-purple;
+    span {
+      font-size: 28px;
+      line-height: 35px;
+      color: $orange;
+    }
+    @include screen(mobile) {
+      font-size: 14px;
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+  .outer-bar {
+    background: #dbdeff;
+    border-radius: 20px;
+    height: 5px;
+    width: 406px;
+    margin-top: 24px;
+    @include screen(mobile) {
+      width: 100%;
+      margin-top: 11px;
+    }
+    .inner-bar {
+      background: linear-gradient(180deg, #ff7878 0%, #ff7878 100%);
+      border-radius: 20px;
+      height: 5px;
+    }
+  }
+}

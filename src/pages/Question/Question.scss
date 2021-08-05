@@ -7,7 +7,7 @@
   padding: 180px 30px;
   position: relative;
   @include screen(mobile) {
-    padding: 125px 20px 41px;
+    padding: 125px 20px;
   }
   .question-content {
     display: flex;
@@ -36,8 +36,10 @@
       text-align: center;
       letter-spacing: 0.5em;
       text-transform: lowercase;
+      margin-bottom: 40px;
       @include screen(mobile) {
         font-size: 13px;
+        margin-bottom: 20px;
       }
     }
     .question-text {

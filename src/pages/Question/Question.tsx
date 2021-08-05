@@ -1,5 +1,6 @@
 import React from "react";
 import { PurpleButton, OutlineButton } from "../../components/buttons/Buttons";
+import Progress from "../../components/progress/Progress";
 
 import desktop_illustration_1 from "../../assets/images/question-desktop-illustration-1.svg";
 import desktop_illustration_2 from "../../assets/images/question-desktop-illustration-2.svg";
@@ -20,6 +21,8 @@ const Question = () => {
       <div className="question-content">
         <h2 className="category-text">Entertainment: Videogames</h2>
         <p className="difficulty">level 1</p>
+
+        <Progress />
 
         <p className="question-text">
           The retail disc of Tony Hawk’s Pro Skater 5 only comes with the
