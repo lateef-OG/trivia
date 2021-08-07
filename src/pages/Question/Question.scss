@@ -49,6 +49,7 @@
       text-align: center;
       color: $deep-purple;
       margin: 61px 0 74px;
+      word-break: break-word;
       @include screen(mobile) {
         font-size: 25px;
         margin: 50px 0;

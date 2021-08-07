@@ -65,7 +65,9 @@ const Question = () => {
 
             <Progress currentQuestion={currentQuestion + 1} total={amount} />
 
-            <p className="question-text" dangerouslySetInnerHTML={{__html: questions[currentQuestion]?.question}} />
+            {/* <p className="question-text" dangerouslySetInnerHTML={{__html: questions[currentQuestion]?.question}} /> */}
+
+            <p className="question-text">This is the correct spelling of "Supercalifragilisticexpialidocious"</p>
 
             <PurpleButton label="true" onClick={() => selectAnswer("True")} />
             <OutlineButton
