@@ -15,6 +15,18 @@
     align-items: center;
     max-width: 620px;
     margin: 0 auto;
+    position: relative;
+    .close{
+        position: absolute;
+        right: -130px;
+        cursor: pointer;
+        z-index: 2;
+        @include screen(mobile){
+            width: 15px;
+            height: 15px;
+            right: -15px;
+        }
+    }
     .score {
       display: flex;
       align-items: center;
@@ -69,16 +81,16 @@
     }
     .questions {
       width: 100%;
-      height: 79px;
+      min-height: 79px;
       border-radius: 14px;
       display: flex;
       align-items: center;
-      padding: 0 30px;
+      padding: 5px 30px;
       margin-bottom: 24px;
       z-index: 2;
       @include screen(mobile) {
-        padding: 0 18px;
-        height: 65px;
+        padding: 3px 18px;
+        min-height: 65px;
         margin-bottom: 13px;
       }
       &.correct {
@@ -99,10 +111,8 @@
           margin-right: 20px;
         }
       }
-      svg {
+      img {
         margin-left: auto;
-        height: 15px;
-        width: auto;
       }
     }
     button {

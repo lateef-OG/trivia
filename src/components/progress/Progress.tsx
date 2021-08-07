@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./Progress.scss";
 
-const Progress = () => {
-    const [width, setWidth] = useState(30)
+const Progress = ({ currentQuestion, total}: {currentQuestion: number, total: number}) => {
+    const [width, setWidth] = useState(0)
+    useEffect(() => {
+      const width = (currentQuestion/total) * 100;
+      setWidth(width)
+    }, [currentQuestion, total])
   return (
     <div className="progress">
       <p className="text">
-        <span>08</span>/10
+        <span>{currentQuestion}</span>/{total}
       </p>
       <div className="outer-bar">
         <div className="inner-bar" style={{ width: `${width}%` }}></div>

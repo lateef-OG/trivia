@@ -1,13 +1,30 @@
-import React from 'react';
-import './App.scss';
-import Result from './pages/Result/Result';
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from './redux/store';
+import Start from "./pages/Start/Start";
+import Question from "./pages/Question/Question";
+import Result from "./pages/Result/Result";
 
+
+import "./App.scss";
 
 function App() {
+  const { currentPage } = useSelector((state: RootState ) => state.page );
   return (
-    <div className="App">
-      <Result />
-    </div>
+      <>
+        {
+          currentPage === 'start' &&
+          <Start />
+        }
+        {
+          currentPage === 'questions' &&
+          <Question />
+        }
+        {
+          currentPage === 'result' &&
+          <Result />
+        }
+      </>
   );
 }
 

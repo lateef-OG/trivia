@@ -1,4 +1,8 @@
 import React from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { setAmount, setDifficulty } from '../../redux/questions';
+import { setPage } from '../../redux/pages';
+import { RootState } from '../../redux/store';
 import { Trophy, Shield } from "../../components/Icons";
 import { TextInput, SelectInput } from "../../components/inputs/Inputs";
 import {
@@ -20,6 +24,24 @@ import mobile_illustration_4 from "../../assets/images/start-mobile-illustration
 import "./Start.scss";
 
 const Start = () => {
+  const dispatch = useDispatch();
+
+  const { amount, difficulty } = useSelector((state: RootState ) => state.questions );
+  const amountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target
+    let isnum = /^\d+$/.test(value);
+    if(isnum || value === '') dispatch(setAmount(Number(value)));
+  }
+  const difficultyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    dispatch(setDifficulty(value));
+  }
+
+  const start = ():void => {
+    if(amount > 0) dispatch(setPage('questions'));
+    else alert('No of questions must be greater than 0')
+  }
+
   return (
     <div className="start-page">
       <div className="start-content">
@@ -30,16 +52,16 @@ const Start = () => {
             <Trophy />
             Difficulty
           </label>
-          <SelectInput options={['easy', 'hard']}/>
+          <SelectInput options={['easy', 'hard']} value={difficulty} onChange={difficultyChange} />
         </div>
         <div className="input-wrapper">
           <label htmlFor="difficulty" className="label">
             <Shield />
             No of Questions
           </label>
-          <TextInput />
+          <TextInput value={amount} onChange={amountChange}/>
         </div>
-        <OrangeButton label="Start" />
+        <OrangeButton label="Start" onClick={start} />
       </div>
       <img
         src={desktop_illustration_1}
