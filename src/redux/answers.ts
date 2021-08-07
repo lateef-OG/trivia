@@ -1,7 +1,9 @@
+import { Answer, AnswersInitialState } from "../types";
+
 const UPDATE_ANSWERS = "UPDATE_ANSWERS";
 const RESET_ANSWERS = "RESET_ANSWERS";
 
-const initialState = {
+const initialState: AnswersInitialState = {
   answers: [],
 };
 
@@ -27,7 +29,7 @@ const answerReducer = (
 
 export default answerReducer;
 
-export const updateAnswers = (answerData: any) => {
+export const updateAnswers = (answerData: Answer) => {
   return {
     type: UPDATE_ANSWERS,
     payload: answerData,

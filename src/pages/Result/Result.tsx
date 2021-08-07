@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../redux/store';
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../redux/store";
 
-import { setPage } from '../../redux/pages';
-import { resetAnswers } from '../../redux/answers';
-import { resetQuestions } from '../../redux/questions';
+import { setPage } from "../../redux/pages";
+import { resetAnswers } from "../../redux/answers";
+import { resetQuestions } from "../../redux/questions";
 
 import { Star } from "../../components/Icons";
 import { OrangeButton } from "../../components/buttons/Buttons";
@@ -27,30 +27,35 @@ import mobile_illustration_5 from "../../assets/images/result-mobile-illustratio
 import mobile_illustration_6 from "../../assets/images/result-mobile-illustration-6.svg";
 
 import "./Result.scss";
+import { Answer } from "../../types";
 
 const Result = () => {
   const dispatch = useDispatch();
 
-  const { answers }: {answers: any} = useSelector((state: RootState ) => state.answers );
+  const { answers }: { answers: Answer[] } = useSelector(
+    (state: RootState) => state.answers
+  );
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const rightAnswers = answers.filter((answer: any) => answer.chosen_answer === answer.correct_answer);
+    const rightAnswers = answers.filter(
+      (answer: Answer) => answer.chosen_answer === answer.correct_answer
+    );
     setCorrectAnswers(rightAnswers.length);
-    setTotal(answers.length)
-  }, [answers])
+    setTotal(answers.length);
+  }, [answers]);
 
   const playAgain = () => {
-    dispatch(setPage('questions'));
+    dispatch(setPage("questions"));
     dispatch(resetAnswers());
-  }
+  };
 
   const end = () => {
-    dispatch(setPage('start'));
+    dispatch(setPage("start"));
     dispatch(resetAnswers());
     dispatch(resetQuestions());
-  }
+  };
 
   return (
     <div className="result-page">
@@ -65,22 +70,28 @@ const Result = () => {
         <div className="stars">
           {Array.from(Array(total).keys()).map((item, index) => {
             const score = correctAnswers;
-            let fill = "#969CDC"
-            if((index + 1)  <= score) fill = "#FF7C7C";
+            let fill = "#969CDC";
+            if (index + 1 <= score) fill = "#FF7C7C";
             return <Star fill={fill} key={item} />;
           })}
         </div>
-        {
-          answers.map((answer: any) => {
-            const { question, correct_answer, chosen_answer } = answer;
-            return(
-              <div className={`questions ${correct_answer === chosen_answer ? 'correct' : 'wrong'}`} key={question}>
-                <p dangerouslySetInnerHTML={{__html: question}} />
-                <img src={correct_answer === chosen_answer ? right : wrong} alt="" />
-              </div>
-            )
-          })
-        }
+        {answers.map((answer: Answer) => {
+          const { question, correct_answer, chosen_answer } = answer;
+          return (
+            <div
+              className={`questions ${
+                correct_answer === chosen_answer ? "correct" : "wrong"
+              }`}
+              key={question}
+            >
+              <p dangerouslySetInnerHTML={{ __html: question }} />
+              <img
+                src={correct_answer === chosen_answer ? right : wrong}
+                alt=""
+              />
+            </div>
+          );
+        })}
         <OrangeButton label="play again" onClick={playAgain} />
       </div>
       <img

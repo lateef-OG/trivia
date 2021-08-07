@@ -1,4 +1,6 @@
 import { Dispatch } from 'redux';
+import { Question, QuestionsInitialState } from '../types';
+
 
 const SET_AMOUNT = "SET_AMOUNT";
 const SET_DIFFICULTY = "SET_DIFFICULTY";
@@ -6,7 +8,7 @@ const SET_QUESTIONS = "SET_QUESTIONS";
 const RESET_QUESTIONS = "RESET_QUESTIONS";
 const SET_LOADING = "SET_LOADING";
 
-const initialState = {
+const initialState: QuestionsInitialState = {
   amount: 0,
   difficulty: "easy",
   questions: [],
@@ -64,7 +66,7 @@ export const setDifficulty = (difficulty: string) => {
   }
 }
 
-export const setQuestions = (questions: any[]) => {
+export const setQuestions = (questions: Question[]) => {
   return {
     type: SET_QUESTIONS,
     payload: questions,
