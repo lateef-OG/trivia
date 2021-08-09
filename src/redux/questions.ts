@@ -1,5 +1,6 @@
 import { Dispatch } from 'redux';
 import { Question, QuestionsInitialState } from '../types';
+import { fetchQuestions } from '../api'
 
 
 const SET_AMOUNT = "SET_AMOUNT";
@@ -89,8 +90,7 @@ export const resetQuestions = () => {
 export const getQuestions = (amount: number, difficulty: string) => (dispatch: Dispatch) => {
   dispatch(setLoading(true))
   dispatch(setQuestions([]))
-  fetch(`https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=boolean`)
-  .then(res => res.json())
+  fetchQuestions(amount, difficulty)
   .then(resJson => {
     dispatch(setLoading(false))
     dispatch(setQuestions(resJson.results))
