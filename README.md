@@ -1,5 +1,5 @@
 # Trivia App
-Trivia is a light-weight quiz app where a user can transverse between various screens. A start screen, where they can choose the amount of questions they intend to attempt and the difficulty of the quiz, the questions screen where they choose their desired answer for each question and a result screen that displays the user's result.
+Trivia is a lightweight quiz app where a user can transverse between various screens. A start screen, where they can choose the number of questions they intend to attempt and the difficulty of the quiz, the questions screen where they choose their desired answer for each question, and a result screen that displays the user's result.
 
 ## Built with
 - [React](https://reactjs.org/)
