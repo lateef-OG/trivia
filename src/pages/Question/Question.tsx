@@ -5,25 +5,13 @@ import { getQuestions } from "../../redux/questions";
 import { updateAnswers } from "../../redux/answers";
 import { setPage } from "../../redux/pages";
 
-import { PurpleButton, OutlineButton } from "../../components/buttons/Buttons";
-import Progress from "../../components/progress/Progress";
-
-import loader from "../../assets/images/loading.svg";
-
-import desktop_illustration_1 from "../../assets/images/question-desktop-illustration-1.svg";
-import desktop_illustration_2 from "../../assets/images/question-desktop-illustration-2.svg";
-import desktop_illustration_3 from "../../assets/images/question-desktop-illustration-3.svg";
-import desktop_illustration_4 from "../../assets/images/question-desktop-illustration-4.svg";
-
-import mobile_illustration_1 from "../../assets/images/question-mobile-illustration-1.svg";
-import mobile_illustration_2 from "../../assets/images/question-mobile-illustration-2.svg";
-import mobile_illustration_3 from "../../assets/images/question-desktop-illustration-3.svg";
-import mobile_illustration_4 from "../../assets/images/question-mobile-illustration-4.svg";
-import mobile_illustration_5 from "../../assets/images/question-mobile-illustration-5.svg";
+import Question from "../../components/question/Question";
+import Loader from "../../components/loader";
+import QuestionBackground from "../../components/backgrounds/QuestionBackground";
 
 import "./Question.scss";
 
-const Question = () => {
+const QuestionPage = () => {
   const dispatch = useDispatch();
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -55,78 +43,20 @@ const Question = () => {
     <div className="question-page">
       <div className="question-content">
         {questions.length > 0 && (
-          <>
-            <h2 className="category-text">
-              {questions[currentQuestion]?.category}
-            </h2>
-            <p className="difficulty">
-              level {difficulty === "easy" ? "1" : "2"}
-            </p>
-
-            <Progress currentQuestion={currentQuestion + 1} total={amount} />
-
-            <p className="question-text" dangerouslySetInnerHTML={{__html: questions[currentQuestion]?.question}} />
-
-            <PurpleButton label="true" onClick={() => selectAnswer("True")} />
-            <OutlineButton
-              label="false"
-              onClick={() => selectAnswer("False")}
-            />
-          </>
+          <Question
+            category={questions[currentQuestion]?.category}
+            difficulty={difficulty === "easy" ? "1" : "2"}
+            question={questions[currentQuestion]?.question}
+            currentQuestion={currentQuestion + 1}
+            total={amount}
+            selectAnswer={selectAnswer}
+          />
         )}
-        {loading && (
-          <div className="loading-container">
-            <img src={loader} alt="" className="loader" />
-          </div>
-        )}
+        {loading && <Loader />}
+        <QuestionBackground />
       </div>
-      <img
-        src={desktop_illustration_1}
-        alt=""
-        className="illustration desktop one"
-      />
-      <img
-        src={desktop_illustration_2}
-        alt=""
-        className="illustration desktop two"
-      />
-      <img
-        src={desktop_illustration_3}
-        alt=""
-        className="illustration desktop three"
-      />
-      <img
-        src={desktop_illustration_4}
-        alt=""
-        className="illustration desktop four"
-      />
-      <img
-        src={mobile_illustration_1}
-        alt=""
-        className="illustration mobile one"
-      />
-      <img
-        src={mobile_illustration_2}
-        alt=""
-        className="illustration mobile two"
-      />
-      <img
-        src={mobile_illustration_3}
-        alt=""
-        className="illustration mobile three"
-      />
-      <img
-        src={mobile_illustration_4}
-        alt=""
-        className="illustration mobile four"
-      />
-      <img
-        src={mobile_illustration_5}
-        alt=""
-        className="illustration mobile five"
-      />
     </div>
   );
 };
 
-export default Question;
+export default QuestionPage;

@@ -1,0 +1,22 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/_variables.scss";
+
+.welcome-text {
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 57px;
+  color: $white;
+  margin-bottom: 30px;
+  @include screen(mobile) {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 10px;
+  }
+}
+.trivia-text {
+  margin-bottom: 50px;
+  @include screen(mobile) {
+    width: 80%;
+    height: auto;
+  }
+}

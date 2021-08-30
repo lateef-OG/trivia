@@ -1,43 +1,56 @@
-import React from "react";
+import React, { FC } from "react";
 import { AnchorDown } from "../Icons";
 import "./Inputs.scss";
 
-export const TextInput = ({
+const Input = ({
+  type,
+  icon,
+  options = [],
   value,
   onChange,
+  name,
+  label
 }: {
-  value: number;
-  onChange: any;
-}) => {
-  return (
-    <input
-      type="text"
-      className="text-input"
-      value={value}
-      onChange={onChange}
-    />
-  );
-};
-
-export const SelectInput = ({
-  options,
-  value,
-  onChange,
-}: {
-  options: string[];
+  type: string;
+  icon: any;
+  options?: string[];
   value: string;
+  // onChange: ((e: React.ChangeEvent<HTMLInputElement>) => void) | ((e: React.ChangeEventHandler<HTMLSelectElement>) => void);
   onChange: any;
+  name: string;
+  label: string;
 }) => {
   return (
-    <div className="select-wrapper">
-      <select name="" id="" value={value} onChange={onChange}>
-        {options.map((option: string) => (
-          <option value={option} key={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-      <AnchorDown />
+    <div className="input-wrapper">
+      <label htmlFor={name} className="label">
+        {icon}
+        {label}
+      </label>
+      {
+        type === 'select' &&
+        <div className="select-wrapper">
+          <select name={name} value={value} onChange={onChange}>
+            {options.map((option: string) => (
+              <option value={option} key={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <AnchorDown />
+        </div>
+      }
+      {
+        type === 'text' &&
+        <input
+          name={name}
+          type="text"
+          className="text-input"
+          value={value}
+          onChange={onChange}
+        />
+      }
     </div>
   );
 };
+
+export default Input;

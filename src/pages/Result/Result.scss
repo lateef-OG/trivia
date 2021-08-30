@@ -4,7 +4,7 @@
 .result-page {
   min-height: 100vh;
   background: $purple;
-  padding: 92px 30px;
+  padding: 180px 30px;
   position: relative;
   @include screen(mobile) {
     padding: 47px 30px 41px;
@@ -27,155 +27,11 @@
             right: -15px;
         }
     }
-    .score {
-      display: flex;
-      align-items: center;
-      margin-bottom: 28px;
-      @include screen(mobile) {
-        margin-bottom: 20px;
-      }
-      .avatar {
-        margin-right: 15px;
-        border-radius: 50%;
-        height: 52px;
-        width: 52px;
-        background: #fffbfa;
-        @include screen(mobile) {
-          height: 32px;
-          width: 32px;
-        }
-      }
-      .score-text {
-        font-weight: bold;
-        font-size: 21px;
-        line-height: 23px;
-        color: #ffffff;
-        span {
-          font-size: 26px;
-          color: $orange;
-        }
-        @include screen(mobile) {
-          font-size: 18px;
-          line-height: 20px;
-          span {
-            font-size: 20px;
-          }
-        }
-      }
-    }
-    .stars {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 58px;
-      @include screen(mobile) {
-        margin-bottom: 19px;
-      }
-      svg {
-        margin: 0 2px;
-        @include screen(mobile) {
-          width: 22px;
-          height: 22px;
-        }
-      }
-    }
-    .questions {
-      width: 100%;
-      min-height: 79px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      padding: 5px 30px;
-      margin-bottom: 24px;
-      z-index: 2;
-      @include screen(mobile) {
-        padding: 3px 18px;
-        min-height: 65px;
-        margin-bottom: 13px;
-      }
-      &.correct {
-        background-color: #fffbfa;
-      }
-      &.wrong {
-        background-color: #ffdbdb;
-      }
-      p {
-        margin-right: 50px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 148.9%;
-        color: $light-purple;
-        opacity: 0.8;
-        @include screen(mobile) {
-          font-size: 12px;
-          margin-right: 20px;
-        }
-      }
-      img {
-        margin-left: auto;
-      }
-    }
     button {
       margin-top: 36px;
       text-transform: uppercase;
       @include screen(mobile) {
         margin-top: 13px;
-      }
-    }
-  }
-  .illustration {
-    position: absolute;
-    &.mobile {
-      display: none;
-    }
-    &.desktop {
-      &.one {
-        left: 0;
-        top: 0;
-      }
-      &.two {
-        right: 0;
-        top: 0;
-      }
-      &.three {
-        left: 0;
-        bottom: 0;
-      }
-      &.four {
-        right: 0;
-        bottom: 0;
-      }
-    }
-    @include screen(mobile) {
-      &.mobile {
-        display: initial;
-        &.one {
-          left: 0;
-          top: 0;
-        }
-        &.two {
-          right: 0;
-          top: 0;
-        }
-        &.three {
-          right: 0;
-          top: 140px;
-        }
-        &.four {
-          left: 0;
-          bottom: 210px;
-        }
-        &.five {
-          right: 0;
-          bottom: 100px;
-        }
-        &.six {
-            bottom: 0;
-            right: 0;
-        }
-      }
-      &.desktop {
-        display: none;
       }
     }
   }

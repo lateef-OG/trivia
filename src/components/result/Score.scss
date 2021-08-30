@@ -1,0 +1,39 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/_variables.scss";
+
+.score {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+  @include screen(mobile) {
+    margin-bottom: 20px;
+  }
+  .avatar {
+    margin-right: 15px;
+    border-radius: 50%;
+    height: 52px;
+    width: 52px;
+    background: #fffbfa;
+    @include screen(mobile) {
+      height: 32px;
+      width: 32px;
+    }
+  }
+  .score-text {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 23px;
+    color: #ffffff;
+    span {
+      font-size: 26px;
+      color: $orange;
+    }
+    @include screen(mobile) {
+      font-size: 18px;
+      line-height: 20px;
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}

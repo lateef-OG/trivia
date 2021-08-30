@@ -1,0 +1,15 @@
+@import "../../sass/_mixins.scss";
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loader {
+    height: 100px;
+    width: 100px;
+    @include screen(mobile) {
+      height: 50px;
+      width: 50px;
+    }
+  }
+}
