@@ -5,11 +5,10 @@ import { getQuestions } from "../../redux/questions";
 import { updateAnswers } from "../../redux/answers";
 import { setPage } from "../../redux/pages";
 
+import Container from "../../components/container/Container";
 import Question from "../../components/question/Question";
 import Loader from "../../components/loader";
 import QuestionBackground from "../../components/backgrounds/QuestionBackground";
-
-import "./Question.scss";
 
 const QuestionPage = () => {
   const dispatch = useDispatch();
@@ -40,22 +39,20 @@ const QuestionPage = () => {
   };
 
   return (
-    <div className="question-page">
-      <div className="question-content">
-        {questions.length > 0 && (
-          <Question
-            category={questions[currentQuestion]?.category}
-            difficulty={difficulty === "easy" ? "1" : "2"}
-            question={questions[currentQuestion]?.question}
-            currentQuestion={currentQuestion + 1}
-            total={amount}
-            selectAnswer={selectAnswer}
-          />
-        )}
-        {loading && <Loader />}
-        <QuestionBackground />
-      </div>
-    </div>
+    <Container backgroundColor="white">
+      {questions.length > 0 && (
+        <Question
+          category={questions[currentQuestion]?.category}
+          difficulty={difficulty}
+          question={questions[currentQuestion]?.question}
+          currentQuestion={currentQuestion + 1}
+          total={amount}
+          selectAnswer={selectAnswer}
+        />
+      )}
+      {loading && <Loader />}
+      <QuestionBackground />
+    </Container>
   );
 };
 

@@ -1,0 +1,55 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/_variables.scss";
+
+.bg {
+  &--desktop {
+    display: none;
+  }
+  @include screen(desktop) {
+    &--mobile {
+      display: none;
+    }
+    &--desktop {
+      display: initial;
+    }
+  }
+  &__illustration {
+    position: absolute;
+    &--small {
+      width: 120px;
+      height: auto;
+    }
+    &--top-left {
+      left: 0;
+      top: 0;
+    }
+    &--top-right {
+      right: 0;
+      top: 0;
+    }
+    &--bottom-left {
+      left: 0;
+      bottom: 0;
+    }
+    &--bottom-right {
+      right: 0;
+      bottom: 0;
+    }
+    &--right-middle-q {
+      right: 0;
+      bottom: 238px;
+    }
+    &--right-middle-top {
+        right: 0;
+        top: 140px;
+      }
+      &--left-middle {
+        left: 0;
+        bottom: 210px;
+      }
+      &--right-middle-bottom {
+        right: 0;
+        bottom: 100px;
+      }
+  }
+}

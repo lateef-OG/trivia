@@ -11,56 +11,58 @@ import mobile_illustration_3 from "../../assets/images/question-desktop-illustra
 import mobile_illustration_4 from "../../assets/images/question-mobile-illustration-4.svg";
 import mobile_illustration_5 from "../../assets/images/question-mobile-illustration-5.svg";
 
-import './QuestionBackground.scss'
-
 const QuestionBackground = () => {
   return (
     <>
-      <img
-        src={desktop_illustration_1}
-        alt=""
-        className="question-illustration desktop one"
-      />
-      <img
-        src={desktop_illustration_2}
-        alt=""
-        className="question-illustration desktop two"
-      />
-      <img
-        src={desktop_illustration_3}
-        alt=""
-        className="question-illustration desktop three"
-      />
-      <img
-        src={desktop_illustration_4}
-        alt=""
-        className="question-illustration desktop four"
-      />
-      <img
-        src={mobile_illustration_1}
-        alt=""
-        className="question-illustration mobile one"
-      />
-      <img
-        src={mobile_illustration_2}
-        alt=""
-        className="question-illustration mobile two"
-      />
-      <img
-        src={mobile_illustration_3}
-        alt=""
-        className="question-illustration mobile three"
-      />
-      <img
-        src={mobile_illustration_4}
-        alt=""
-        className="question-illustration mobile four"
-      />
-      <img
-        src={mobile_illustration_5}
-        alt=""
-        className="question-illustration mobile five"
-      />
+      <div className="bg bg--desktop">
+        <img
+          src={desktop_illustration_1}
+          alt=""
+          className="bg__illustration bg__illustration--top-left"
+        />
+        <img
+          src={desktop_illustration_2}
+          alt=""
+          className="bg__illustration bg__illustration--top-right"
+        />
+        <img
+          src={desktop_illustration_3}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-left"
+        />
+        <img
+          src={desktop_illustration_4}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-right"
+        />
+      </div>
+      <div className="bg bg--mobile">
+        <img
+          src={mobile_illustration_1}
+          alt=""
+          className="bg__illustration bg__illustration--top-left"
+        />
+        <img
+          src={mobile_illustration_2}
+          alt=""
+          className="bg__illustration bg__illustration--top-right"
+        />
+        <img
+          src={mobile_illustration_3}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-left bg__illustration--small"
+        />
+        <img
+          src={mobile_illustration_4}
+          alt=""
+          className="bg__illustration bg__illustration--right-middle-q"
+        />
+        <img
+          src={mobile_illustration_5}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-right"
+        />
+      </div>
     </>
   );
 };

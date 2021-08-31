@@ -1,15 +1,19 @@
 import React from "react";
 import "./Buttons.scss";
 
-export const OrangeButton = ({
+export const Button = ({
   label,
   onClick,
+  type,
+  customClass = ''
 }: {
   label: string;
   onClick: any;
+  type: string;
+  customClass?: string;
 }) => {
   return (
-    <button className="button button--orange" onClick={onClick}>
+    <button className={`button button--${type} ${customClass}`} onClick={onClick}>
       {label}
     </button>
   );

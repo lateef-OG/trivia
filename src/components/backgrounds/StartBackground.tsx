@@ -10,51 +10,55 @@ import mobile_illustration_2 from "../../assets/images/start-mobile-illustration
 import mobile_illustration_3 from "../../assets/images/start-mobile-illustration-3.svg";
 import mobile_illustration_4 from "../../assets/images/start-mobile-illustration-4.svg";
 
-import './StartBackground.scss';
+import "./background.scss";
 
 const StartBackground = () => {
   return (
     <>
-      <img
-        src={desktop_illustration_1}
-        alt=""
-        className="start-illustration desktop one"
-      />
-      <img
-        src={desktop_illustration_2}
-        alt=""
-        className="start-illustration desktop two"
-      />
-      <img
-        src={desktop_illustration_3}
-        alt=""
-        className="start-illustration desktop three"
-      />
-      <img
-        src={desktop_illustration_4}
-        alt=""
-        className="start-illustration desktop four"
-      />
-      <img
-        src={mobile_illustration_1}
-        alt=""
-        className="start-illustration mobile one"
-      />
-      <img
-        src={mobile_illustration_2}
-        alt=""
-        className="start-illustration mobile two"
-      />
-      <img
-        src={mobile_illustration_3}
-        alt=""
-        className="start-illustration mobile three"
-      />
-      <img
-        src={mobile_illustration_4}
-        alt=""
-        className="start-illustration mobile four"
-      />
+      <div className="bg bg--desktop">
+        <img
+          src={desktop_illustration_1}
+          alt=""
+          className="bg__illustration bg__illustration--top-left"
+        />
+        <img
+          src={desktop_illustration_2}
+          alt=""
+          className="bg__illustration bg__illustration--top-right"
+        />
+        <img
+          src={desktop_illustration_3}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-left"
+        />
+        <img
+          src={desktop_illustration_4}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-right"
+        />
+      </div>
+      <div className="bg bg--mobile">
+        <img
+          src={mobile_illustration_1}
+          alt=""
+          className="bg__illustration bg__illustration--top-left"
+        />
+        <img
+          src={mobile_illustration_2}
+          alt=""
+          className="bg__illustration bg__illustration--top-right"
+        />
+        <img
+          src={mobile_illustration_3}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-left"
+        />
+        <img
+          src={mobile_illustration_4}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-right"
+        />
+      </div>
     </>
   );
 };

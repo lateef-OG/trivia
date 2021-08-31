@@ -1,8 +1,8 @@
 import React from "react";
 import Progress from "../progress/Progress";
-import { PurpleButton, OutlineButton } from "../buttons/Buttons";
+import { Button } from "../buttons/Buttons";
 
-import './Questions.scss';
+import "./Question.scss";
 
 const Question = ({
   category,
@@ -19,10 +19,15 @@ const Question = ({
   selectAnswer: (chosen_answer: string) => void;
   difficulty: string;
 }) => {
+  const level: { [key: string]: number } = {
+    easy: 1,
+    medium: 2,
+    hard: 3,
+  };
   return (
     <div className="question">
       <h2 className="question__category">{category}</h2>
-      <p className="question__difficulty">level {difficulty}</p>
+      <p className="question__difficulty">level {level[difficulty]}</p>
 
       <Progress currentQuestion={currentQuestion} total={total} />
 
@@ -31,8 +36,18 @@ const Question = ({
         dangerouslySetInnerHTML={{ __html: question }}
       />
 
-      <PurpleButton label="true" onClick={() => selectAnswer("True")} />
-      <OutlineButton label="false" onClick={() => selectAnswer("False")} />
+      <Button
+        label="true"
+        onClick={() => selectAnswer("True")}
+        type="purple"
+        customClass="question__button"
+      />
+      <Button
+        label="false"
+        onClick={() => selectAnswer("False")}
+        type="outline"
+        customClass="question__button"
+      />
     </div>
   );
 };

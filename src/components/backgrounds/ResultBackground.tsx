@@ -12,61 +12,63 @@ import mobile_illustration_4 from "../../assets/images/result-mobile-illustratio
 import mobile_illustration_5 from "../../assets/images/result-mobile-illustration-5.svg";
 import mobile_illustration_6 from "../../assets/images/result-mobile-illustration-6.svg";
 
-import './ResultBackground.scss';
-
 const ResultBackground = () => {
   return (
     <>
-      <img
-        src={desktop_illustration_1}
-        alt=""
-        className="result-illustration desktop one"
-      />
-      <img
-        src={desktop_illustration_2}
-        alt=""
-        className="result-illustration desktop two"
-      />
-      <img
-        src={desktop_illustration_3}
-        alt=""
-        className="result-illustration desktop three"
-      />
-      <img
-        src={desktop_illustration_4}
-        alt=""
-        className="result-illustration desktop four"
-      />
-      <img
-        src={mobile_illustration_1}
-        alt=""
-        className="result-illustration mobile one"
-      />
-      <img
-        src={mobile_illustration_2}
-        alt=""
-        className="result-illustration mobile two"
-      />
-      <img
-        src={mobile_illustration_3}
-        alt=""
-        className="result-illustration mobile three"
-      />
-      <img
-        src={mobile_illustration_4}
-        alt=""
-        className="result-illustration mobile four"
-      />
-      <img
-        src={mobile_illustration_5}
-        alt=""
-        className="result-illustration mobile five"
-      />
-      <img
-        src={mobile_illustration_6}
-        alt=""
-        className="result-illustration mobile six"
-      />
+      <div className="bg bg--desktop">
+        <img
+          src={desktop_illustration_1}
+          alt=""
+          className="bg__illustration bg__illustration--top-left"
+        />
+        <img
+          src={desktop_illustration_2}
+          alt=""
+          className="bg__illustration bg__illustration--top-right"
+        />
+        <img
+          src={desktop_illustration_3}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-left"
+        />
+        <img
+          src={desktop_illustration_4}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-right"
+        />
+      </div>
+      <div className="bg bg--mobile">
+        <img
+          src={mobile_illustration_1}
+          alt=""
+          className="bg__illustration bg__illustration--top-left"
+        />
+        <img
+          src={mobile_illustration_2}
+          alt=""
+          className="bg__illustration bg__illustration--top-right"
+        />
+        <img
+          src={mobile_illustration_3}
+          alt=""
+          className="bg__illustration bg__illustration--right-middle-top"
+        />
+        <img
+          src={mobile_illustration_4}
+          alt=""
+          className="bg__illustration bg__illustration--left-middle"
+        />
+        <img
+          src={mobile_illustration_5}
+          alt=""
+          className="bg__illustration bg__illustration--right-middle-bottom"
+        />
+        <img
+          src={mobile_illustration_6}
+          alt=""
+          className="bg__illustration bg__illustration--bottom-right"
+        />
+      </div>
     </>
   );
 };
