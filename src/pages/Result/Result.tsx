@@ -5,16 +5,15 @@ import { setPage } from "../../redux/pages";
 import { resetAnswers } from "../../redux/answers";
 import { resetQuestions } from "../../redux/questions";
 
-import { OrangeButton } from "../../components/buttons/Buttons";
+import Button from "../../components/button/Button";
 import Stars from "../../components/result/Stars";
 import Score from "../../components/result/Score";
 import Results from "../../components/result/Results";
 
-import close from "../../assets/images/close.svg";
-
 import "./Result.scss";
 import { Answer } from "../../types";
 import ResultBackground from "../../components/backgrounds/ResultBackground";
+import Container from "../../components/container/Container";
 
 const Result = () => {
   const dispatch = useDispatch();
@@ -45,16 +44,18 @@ const Result = () => {
   };
 
   return (
-    <div className="result-page">
-      <div className="result-section">
-        <img src={close} alt="" className="close" onClick={end} />
-        <Score total={total} correctAnswers={correctAnswers} />
-        <Stars total={total} correctAnswers={correctAnswers} />
-        <Results answers={answers} />
-        <OrangeButton label="play again" onClick={playAgain} />
-      </div>
+    <Container backgroundColor="purple">
+      <Score total={total} correctAnswers={correctAnswers} onClose={end} />
+      <Stars total={total} correctAnswers={correctAnswers} />
+      <Results answers={answers} />
+      <Button
+        label="play again"
+        type="orange"
+        customClass="result-button"
+        onClick={playAgain}
+      />
       <ResultBackground />
-    </div>
+    </Container>
   );
 };
 

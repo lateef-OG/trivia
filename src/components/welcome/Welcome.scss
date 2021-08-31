@@ -1,23 +1,29 @@
 @import "../../sass/_mixins.scss";
 @import "../../sass/_variables.scss";
 
-.welcome-text {
-  font-weight: bold;
-  color: $white;
-  font-size: 26px;
-  line-height: 32px;
-  margin-bottom: 10px;
-  @include screen(desktop) {
-    font-size: 46px;
-    line-height: 57px;
-    margin-bottom: 30px;
+.welcome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__text {
+    font-weight: bold;
+    color: $white;
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 10px;
+    @include screen(desktop) {
+      font-size: 46px;
+      line-height: 57px;
+      margin-bottom: 30px;
+    }
   }
-}
-.trivia-text {
-  width: 75%;
-  height: auto;
-  margin-bottom: 50px;
-  @include screen(desktop) {
-    width: auto;
+  &__banner {
+    width: 75%;
+    height: auto;
+    margin-bottom: 50px;
+    @include screen(desktop) {
+      width: auto;
+    }
   }
 }

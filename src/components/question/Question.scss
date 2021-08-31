@@ -1,0 +1,59 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/_variables.scss";
+
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__category {
+    font-size: 31px;
+    line-height: 39px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: $deep-purple;
+    text-align: center;
+    @include screen(desktop) {
+      font-size: 81px;
+      line-height: 101px;
+      margin-bottom: 30px;
+    }
+  }
+  &__difficulty {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 116.13%;
+    color: $deep-purple;
+    text-align: center;
+    letter-spacing: 0.5em;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+    @include screen(desktop) {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+  }
+  &__text {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 143.9%;
+    text-align: center;
+    color: $deep-purple;
+    margin: 50px 0;
+    word-break: break-word;
+    @include screen(mobile) {
+      padding-right: 85px;
+      text-align: left;
+    }
+    @include screen(desktop) {
+      margin: 61px 0 74px;
+      font-size: 31px;
+    }
+  }
+  &__button {
+    margin-top: 5px;
+    text-transform: uppercase;
+    @include screen(desktop) {
+      margin-top: 30px;
+    }
+  }
+}

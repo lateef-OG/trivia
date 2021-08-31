@@ -5,12 +5,13 @@ import { setPage } from "../../redux/pages";
 import { RootState } from "../../redux/store";
 import { Trophy, Shield } from "../../components/Icons";
 import Input from "../../components/inputs/Inputs";
-import { OrangeButton } from "../../components/buttons/Buttons";
+import Button from "../../components/button/Button";
 
 import Welcome from "../../components/welcome/Welcome";
 import StartBackground from "../../components/backgrounds/StartBackground";
 
 import "./Start.scss";
+import Container from "../../components/container/Container";
 
 const Start = () => {
   const dispatch = useDispatch();
@@ -34,30 +35,33 @@ const Start = () => {
   };
 
   return (
-    <div className="start-page">
-      <div className="start-content">
-        <Welcome />
-        <Input
-          name="difficulty"
-          label="Difficulty"
-          type="select"
-          options={["easy", "medium", "hard"]}
-          value={difficulty}
-          onChange={difficultyChange}
-          icon={<Trophy />}
-        />
-        <Input
-          name="amount"
-          label="No of Questions"
-          type="text"
-          value={amount}
-          onChange={amountChange}
-          icon={<Shield />}
-        />
-        <OrangeButton label="Start" onClick={start} />
-        <StartBackground />
-      </div>
-    </div>
+    <Container backgroundColor="purple">
+      <Welcome />
+      <Input
+        name="difficulty"
+        label="Difficulty"
+        type="select"
+        options={["easy", "medium", "hard"]}
+        value={difficulty}
+        onChange={difficultyChange}
+        icon={Trophy}
+      />
+      <Input
+        name="amount"
+        label="No of Questions"
+        type="text"
+        value={amount}
+        onChange={amountChange}
+        icon={Shield}
+      />
+      <Button
+        label="Start"
+        onClick={start}
+        customClass="start-button"
+        type="orange"
+      />
+      <StartBackground />
+    </Container>
   );
 };
 

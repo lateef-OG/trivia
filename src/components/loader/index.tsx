@@ -5,8 +5,8 @@ import './Loader.scss';
 
 const Loader = () => {
   return (
-    <div className="loading-container">
-      <img src={spinner} alt="" className="loader" />
+    <div className="loader">
+      <img src={spinner} alt="" className="loader__spinner" />
     </div>
   );
 };

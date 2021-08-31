@@ -6,10 +6,10 @@ import './Welcome.scss';
 
 const Welcome = () => {
   return (
-    <>
-      <h3 className="welcome-text">Welcome to the</h3>
-      <img src={trivia_text} alt="trivia text" className="trivia-text" />
-    </>
+    <div className="welcome">
+      <h3 className="welcome__text">Welcome to the</h3>
+      <img src={trivia_text} alt="trivia text" className="welcome__banner" />
+    </div>
   );
 };
 

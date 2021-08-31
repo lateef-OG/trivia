@@ -1,10 +1,11 @@
-export const AnchorDown = () => (
+export const AnchorDown = ({ customClass }: { customClass: string}) => (
   <svg
     width="15"
     height="10"
     viewBox="0 0 15 10"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className={customClass}
   >
     <path
       fillRule="evenodd"
@@ -15,7 +16,7 @@ export const AnchorDown = () => (
   </svg>
 );
 
-export const Trophy = () => (
+export const Trophy = ({ customClass }: { customClass: string}) => (
   <>
     <svg
       width="35"
@@ -23,6 +24,7 @@ export const Trophy = () => (
       viewBox="0 0 35 37"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={customClass}
     >
       <path
         d="M12.6897 18.9816C2.55592 14.2258 -0.00353104 9.22079 0.974471 6.10564C1.7652 3.63429 4.61597 2.45054 8.25747 3.1151L7.77887 5.77336C5.59397 5.37877 3.88767 5.85643 3.55473 6.93635C3.01371 8.61853 5.32346 12.5644 13.8342 16.5518L12.6897 18.9816Z"
@@ -56,13 +58,14 @@ export const Trophy = () => (
   </>
 );
 
-export const Shield = () => (
+export const Shield = ({ customClass }: { customClass: string}) => (
   <svg
     width="35"
     height="35"
     viewBox="0 0 35 35"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className={customClass}
   >
     <path
       d="M17.5 35C27.165 35 35 27.165 35 17.5C35 7.83502 27.165 0 17.5 0C7.83502 0 0 7.83502 0 17.5C0 27.165 7.83502 35 17.5 35Z"
@@ -79,13 +82,14 @@ export const Shield = () => (
   </svg>
 );
 
-export const Star = ({ fill }: { fill: string }) => (
+export const Star = ({ fill, customClass }: { fill: string, customClass: string }) => (
   <svg
     width="35"
     height="33"
     viewBox="0 0 35 33"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className={customClass}
   >
     <path
       d="M17.1644 0.438477L22.829 10.4226L34.0749 12.7247L26.3299 21.1974L27.6157 32.6043L17.1644 27.8565L6.71306 32.6043L7.99884 21.1974L0.253799 12.7247L11.4998 10.4226L17.1644 0.438477Z"
