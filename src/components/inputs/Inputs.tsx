@@ -1,4 +1,3 @@
-import React, { FC } from "react";
 import { AnchorDown } from "../Icons";
 import "./Inputs.scss";
 
@@ -7,7 +6,7 @@ const Input = ({
   icon,
   options = [],
   value,
-  onChange,
+  handleInput,
   name,
   label
 }: {
@@ -15,8 +14,7 @@ const Input = ({
   icon: any;
   options?: string[];
   value: string;
-  // onChange: ((e: React.ChangeEvent<HTMLInputElement>) => void) | ((e: React.ChangeEventHandler<HTMLSelectElement>) => void);
-  onChange: any;
+  handleInput: any;
   name: string;
   label: string;
 }) => {
@@ -30,7 +28,7 @@ const Input = ({
       {
         type === 'select' &&
         <div className="input__wrapper">
-          <select name={name} value={value} onChange={onChange} className="input__select">
+          <select name={name} value={value} onChange={handleInput} className="input__select">
             {options.map((option: string) => (
               <option value={option} key={option}>
                 {option}
@@ -47,7 +45,7 @@ const Input = ({
           type="text"
           className="input__text"
           value={value}
-          onChange={onChange}
+          onChange={handleInput}
         />
       }
     </div>

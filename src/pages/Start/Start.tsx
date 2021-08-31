@@ -43,7 +43,7 @@ const Start = () => {
         type="select"
         options={["easy", "medium", "hard"]}
         value={difficulty}
-        onChange={difficultyChange}
+        handleInput={difficultyChange}
         icon={Trophy}
       />
       <Input
@@ -51,7 +51,7 @@ const Start = () => {
         label="No of Questions"
         type="text"
         value={amount}
-        onChange={amountChange}
+        handleInput={amountChange}
         icon={Shield}
       />
       <Button
