@@ -4,10 +4,10 @@
 .question-page {
   min-height: 100vh;
   background: $white;
-  padding: 180px 30px;
+  padding: 125px 20px;
   position: relative;
-  @include screen(mobile) {
-    padding: 125px 20px;
+  @include screen(desktop) {
+    padding: 180px 30px;
   }
   .question-content {
     display: flex;
@@ -17,10 +17,10 @@
     margin: 0 auto;
 
     button{
-        margin-top: 30px;
+        margin-top: 5px;
         text-transform: uppercase;
-        @include screen(mobile){
-            margin-top: 5px;
+        @include screen(desktop){
+            margin-top: 30px;
         }
     }
   }

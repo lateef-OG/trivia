@@ -2,18 +2,18 @@
 @import "../../sass/_variables.scss";
 
 .result {
+  min-height: 65px;
   width: 100%;
-  min-height: 79px;
   border-radius: 14px;
+  padding: 3px 18px;
+  margin-bottom: 13px;
   display: flex;
   align-items: center;
-  padding: 5px 30px;
-  margin-bottom: 24px;
   z-index: 2;
-  @include screen(mobile) {
-    padding: 3px 18px;
-    min-height: 65px;
-    margin-bottom: 13px;
+  @include screen(desktop) {
+    min-height: 79px;
+    padding: 5px 30px;
+    margin-bottom: 24px;
   }
   &.correct {
     background-color: #fffbfa;
@@ -22,15 +22,15 @@
     background-color: #ffdbdb;
   }
   p {
-    margin-right: 50px;
+    margin-right: 20px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 148.9%;
     color: $light-purple;
     opacity: 0.8;
-    @include screen(mobile) {
-      font-size: 12px;
-      margin-right: 20px;
+    @include screen(desktop) {
+      font-size: 16px;
+      margin-right: 50px;
     }
   }
   img {

@@ -2,44 +2,46 @@
 @import "../../sass/_variables.scss";
 
 .category-text {
+  font-size: 31px;
+  line-height: 39px;
+  margin-bottom: 15px;
   font-weight: 500;
-  font-size: 81px;
-  line-height: 101px;
   color: $deep-purple;
   text-align: center;
-  margin-bottom: 30px;
-  @include screen(mobile) {
-    font-size: 31px;
-    line-height: 39px;
-    margin-bottom: 15px;
+  @include screen(desktop) {
+    font-size: 81px;
+    line-height: 101px;
+    margin-bottom: 30px;
   }
 }
 .difficulty {
+  font-size: 13px;
   font-weight: 500;
-  font-size: 28px;
   line-height: 116.13%;
   color: $deep-purple;
   text-align: center;
   letter-spacing: 0.5em;
   text-transform: lowercase;
-  margin-bottom: 40px;
-  @include screen(mobile) {
-    font-size: 13px;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  @include screen(desktop) {
+    font-size: 28px;
+    margin-bottom: 40px;
   }
 }
 .question-text {
+  font-size: 25px;
   font-weight: 500;
-  font-size: 31px;
   line-height: 143.9%;
-  text-align: center;
+  text-align: left;
   color: $deep-purple;
-  margin: 61px 0 74px;
+  margin: 50px 0;
   word-break: break-word;
   @include screen(mobile) {
-    font-size: 25px;
-    margin: 50px 0;
-    text-align: left;
     padding-right: 85px;
+  }
+  @include screen(desktop) {
+    margin: 61px 0 74px;
+    text-align: center;
+    font-size: 31px;
   }
 }

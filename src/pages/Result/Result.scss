@@ -4,10 +4,10 @@
 .result-page {
   min-height: 100vh;
   background: $purple;
-  padding: 180px 30px;
+  padding: 47px 30px 41px;
   position: relative;
-  @include screen(mobile) {
-    padding: 47px 30px 41px;
+  @include screen(desktop) {
+    padding: 180px 30px;
   }
   .result-section {
     display: flex;
@@ -18,20 +18,20 @@
     position: relative;
     .close{
         position: absolute;
-        right: -130px;
         cursor: pointer;
         z-index: 2;
-        @include screen(mobile){
-            width: 15px;
-            height: 15px;
-            right: -15px;
+        width: 15px;
+        height: 15px;
+        right: -15px;
+        @include screen(desktop){
+          right: -130px;
         }
     }
     button {
-      margin-top: 36px;
+      margin-top: 13px;
       text-transform: uppercase;
       @include screen(mobile) {
-        margin-top: 13px;
+        margin-top: 36px;
       }
     }
   }

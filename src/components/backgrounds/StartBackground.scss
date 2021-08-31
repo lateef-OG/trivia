@@ -2,11 +2,34 @@
 @import "../../sass/_variables.scss";
 
 .start-illustration {
-    position: absolute;
+  position: absolute;
+  &.mobile {
+    &.one {
+      left: 0;
+      top: 0;
+    }
+    &.two {
+      right: 0;
+      top: 0;
+    }
+    &.three {
+      left: 0;
+      bottom: 0;
+    }
+    &.four {
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &.desktop {
+    display: none;
+  }
+  @include screen(desktop) {
     &.mobile {
       display: none;
     }
     &.desktop {
+      display: initial;
       &.one {
         left: 0;
         top: 0;
@@ -24,28 +47,5 @@
         bottom: 0;
       }
     }
-    @include screen(mobile) {
-      &.mobile {
-        display: initial;
-        &.one {
-          left: 0;
-          top: 0;
-        }
-        &.two {
-          right: 0;
-          top: 0;
-        }
-        &.three {
-          left: 0;
-          bottom: 0;
-        }
-        &.four {
-          right: 0;
-          bottom: 0;
-        }
-      }
-      &.desktop {
-        display: none;
-      }
-    }
   }
+}

@@ -4,10 +4,10 @@
 .start-page {
   min-height: 100vh;
   background: $purple;
-  padding: 180px 30px;
+  padding: 125px 30px 41px;
   position: relative;
-  @include screen(mobile) {
-    padding: 125px 30px 41px;
+  @include screen(desktop) {
+    padding: 180px 30px;
   }
   .start-content {
     display: flex;
