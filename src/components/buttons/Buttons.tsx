@@ -9,7 +9,7 @@ export const OrangeButton = ({
   onClick: any;
 }) => {
   return (
-    <button className="orange-button" onClick={onClick}>
+    <button className="button button--orange" onClick={onClick}>
       {label}
     </button>
   );
@@ -23,7 +23,7 @@ export const PurpleButton = ({
   onClick: any;
 }) => {
   return (
-    <button className="purple-button" onClick={onClick}>
+    <button className="button button--purple" onClick={onClick}>
       {label}
     </button>
   );
@@ -37,7 +37,7 @@ export const OutlineButton = ({
   onClick: any;
 }) => {
   return (
-    <button className="outline-button" onClick={onClick}>
+    <button className="button button--outline" onClick={onClick}>
       {label}
     </button>
   );

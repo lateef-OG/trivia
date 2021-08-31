@@ -12,8 +12,8 @@ const Score = ({
 }) => {
   return (
     <div className="score">
-      <img src={avatar} alt="" className="avatar" />
-      <p className="score-text">
+      <img src={avatar} alt="" className="score__avatar" />
+      <p className="score__text">
         You scored <span>{correctAnswers}</span>/{total}
       </p>
     </div>

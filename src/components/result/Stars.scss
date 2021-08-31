@@ -9,7 +9,7 @@
   @include screen(desktop) {
     margin-bottom: 58px;
   }
-  svg {
+  &__icon {
     margin: 0 2px;
     width: 22px;
     height: 22px;

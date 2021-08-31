@@ -16,11 +16,11 @@ const Progress = ({
   }, [currentQuestion, total]);
   return (
     <div className="progress">
-      <p className="text">
+      <p className="progress__text">
         <span>{currentQuestion}</span>/{total}
       </p>
-      <div className="outer-bar">
-        <div className="inner-bar" style={{ width: `${width}%` }}></div>
+      <div className="progress__outer-bar">
+        <div className="progress__inner-bar" style={{ width: `${width}%` }}></div>
       </div>
     </div>
   );

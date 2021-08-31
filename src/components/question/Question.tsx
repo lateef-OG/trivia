@@ -20,20 +20,20 @@ const Question = ({
   difficulty: string;
 }) => {
   return (
-    <>
-      <h2 className="category-text">{category}</h2>
-      <p className="difficulty">level {difficulty}</p>
+    <div className="question">
+      <h2 className="question__category">{category}</h2>
+      <p className="question__difficulty">level {difficulty}</p>
 
       <Progress currentQuestion={currentQuestion} total={total} />
 
       <p
-        className="question-text"
+        className="question__text"
         dangerouslySetInnerHTML={{ __html: question }}
       />
 
       <PurpleButton label="true" onClick={() => selectAnswer("True")} />
       <OutlineButton label="false" onClick={() => selectAnswer("False")} />
-    </>
+    </div>
   );
 };
 
