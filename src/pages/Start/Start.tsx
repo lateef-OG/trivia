@@ -5,7 +5,7 @@ import { setPage } from "../../redux/pages";
 import { RootState } from "../../redux/store";
 import { Trophy, Shield } from "../../components/Icons";
 import Input from "../../components/inputs/Inputs";
-import { Button } from "../../components/buttons/Buttons";
+import Button from "../../components/button/Button";
 
 import Welcome from "../../components/welcome/Welcome";
 import StartBackground from "../../components/backgrounds/StartBackground";
@@ -54,7 +54,12 @@ const Start = () => {
         onChange={amountChange}
         icon={Shield}
       />
-      <Button label="Start" onClick={start} customClass="start-button" type="orange"/>
+      <Button
+        label="Start"
+        onClick={start}
+        customClass="start-button"
+        type="orange"
+      />
       <StartBackground />
     </Container>
   );

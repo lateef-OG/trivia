@@ -1,6 +1,6 @@
 import React from "react";
 import Progress from "../progress/Progress";
-import { Button } from "../buttons/Buttons";
+import Button from "../button/Button";
 
 import "./Question.scss";
 
