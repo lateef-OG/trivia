@@ -9,4 +9,9 @@
       @content;
     }
   }
+  @if $breakpoint==tablet {
+    @media only screen and (device-width: 601px) and (max-device-width: 1280px) {
+      @content
+    }
+  }
 }
