@@ -5,7 +5,6 @@ import { setPage } from "../../redux/pages";
 import { resetAnswers } from "../../redux/answers";
 import { resetQuestions } from "../../redux/questions";
 
-import Button from "../../components/button/Button";
 import Stars from "../../components/result/Stars";
 import Score from "../../components/result/Score";
 import Results from "../../components/result/Results";
