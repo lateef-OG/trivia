@@ -55,7 +55,7 @@
   &__button {
     margin-top: 5px;
     text-transform: uppercase;
-    @include screen(desktop) {
+    @include screen(tablet-desktop) {
       margin-top: 30px;
     }
   }
