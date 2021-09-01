@@ -10,11 +10,11 @@ const ResultCard = ({ isCorrect, question }: {
 }) => {
   return (
     <div
-      className={`result result--${isCorrect ? "correct" : "wrong"}`}
+      className={`result-card result-card--${isCorrect ? "correct" : "wrong"}`}
       key={question}
     >
-      <p className="result__text" dangerouslySetInnerHTML={{ __html: question }} />
-      <img className="result__img" src={isCorrect ? right : wrong} alt="" />
+      <p className="result-card__text" dangerouslySetInnerHTML={{ __html: question }} />
+      <img className="result-card__img" src={isCorrect ? right : wrong} alt="" />
     </div>
   );
 };

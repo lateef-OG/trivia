@@ -40,7 +40,7 @@ const QuestionPage = () => {
 
   return (
     <Container backgroundColor="white">
-      {questions.length > 0 && (
+      {questions?.length > 0 && (
         <Question
           category={questions[currentQuestion]?.category}
           difficulty={difficulty}

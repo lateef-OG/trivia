@@ -10,7 +10,6 @@ import Stars from "../../components/result/Stars";
 import Score from "../../components/result/Score";
 import Results from "../../components/result/Results";
 
-import "./Result.scss";
 import { Answer } from "../../types";
 import ResultBackground from "../../components/backgrounds/ResultBackground";
 import Container from "../../components/container/Container";
@@ -47,13 +46,7 @@ const Result = () => {
     <Container backgroundColor="purple">
       <Score total={total} correctAnswers={correctAnswers} onClose={end} />
       <Stars total={total} correctAnswers={correctAnswers} />
-      <Results answers={answers} />
-      <Button
-        label="play again"
-        type="orange"
-        customClass="result-button"
-        onClick={playAgain}
-      />
+      <Results answers={answers} buttonAction={playAgain} />
       <ResultBackground />
     </Container>
   );

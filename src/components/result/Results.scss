@@ -1,0 +1,15 @@
+@import "../../sass/_mixins.scss";
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    &__button{
+        margin-top: 36px;
+        text-transform: uppercase;
+        @include screen(desktop) {
+          margin-top: 13px;
+        }
+    }
+}

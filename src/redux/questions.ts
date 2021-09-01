@@ -91,9 +91,14 @@ export const getQuestions = (amount: number, difficulty: string) => (dispatch: D
   dispatch(setLoading(true))
   dispatch(setQuestions([]))
   fetchQuestions(amount, difficulty)
+  .then(res => res.json())
   .then(resJson => {
     dispatch(setLoading(false))
     dispatch(setQuestions(resJson.results))
+  })
+  .catch(e => {
+    console.log(e);
+    if(e.hasOwnProperty('message')) alert(e.message);
   })
 }
 
